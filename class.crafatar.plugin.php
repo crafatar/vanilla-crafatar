@@ -45,7 +45,6 @@ class CrafatarPlugin extends Gdn_Plugin
                 'LabelCode' => T('Include hat layer'),
                 'Default' => '1'
             )
-
         ));
 
         $Conf->RenderAll();

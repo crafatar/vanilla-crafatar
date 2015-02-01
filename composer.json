@@ -1,0 +1,14 @@
+{
+  "name": "crafatar/vanilla-forums-crafatar",
+  "description": "Crafatar Plugin for Vanilla 2",
+  "type": "project",
+  "homepage": "https://crafatar.com/",
+  "license": "GPL v2",
+  "authors": [
+    {
+      "name": "Chris Ireland",
+      "email": "ireland63@gmail.com",
+      "role": "Developer"
+    }
+  ]
+}

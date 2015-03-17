@@ -13,6 +13,7 @@ $PluginInfo['crafatar'] = array(
     'Description' => 'Crafatar is a blazing fast Minecraft avatar API',
     'Version' => '1.0',
     'RequiredApplications' => array('Vanilla' => '2.0.18'),
+    'License' => 'MIT',
     'Author' => 'Chris Ireland',
     'MobileFriendly' => true,
     'SettingsPermission' => 'Garden.Settings.Manage',

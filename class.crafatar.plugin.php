@@ -40,7 +40,7 @@ class CrafatarPlugin extends Gdn_Plugin
                 'Default' => 'steve',
                 'LabelCode' => T('Valid options are steve, alex, or a custom URL')
             ),
-            'Plugins.CrafatarPlugin.UseHelm' => array(
+            'Plugins.CrafatarPlugin.UseOverlay' => array(
                 'Description' => T('Should avatars include the hat layer?'),
                 'Control' => 'CheckBox',
                 'LabelCode' => T('Include hat layer'),
@@ -62,17 +62,17 @@ class CrafatarPlugin extends Gdn_Plugin
         if (!$Sender->User->Photo) {
             $username = GetValue('Name', $Sender->User);
 
-            // Helm
-            if (C('Plugins.CrafatarPlugin.UseHelm', 1) == 1) {
-                $useHelm = true
+            // Overlay
+            if (C('Plugins.CrafatarPlugin.UseOverlay', 1) == 1) {
+                $useOverlay = true
             }
-            
+
             // Build the query
             $crafatarQuery = array(
-                'helm' = $useHelm,
-                'default' = C('Plugins.CrafatarPlugin.FallbackUrl', 'steve'); 
+                'overlay' = $useOverlay,
+                'default' = C('Plugins.CrafatarPlugin.FallbackUrl', 'steve');
             );
-            
+
             $crafatarQuery = http_build_query($crafatarQuery);
 
             $Sender->User->Photo = 'https://crafatar.com/avatars/' . $username . $crafatarQuery;
@@ -93,19 +93,19 @@ if (!function_exists('UserPhotoDefaultUrl')) {
     {
         $username = GetValue('Name', $User);
 
-            // Helm
-            if (C('Plugins.CrafatarPlugin.UseHelm', 1) == 1) {
-                $useHelm = true
+            // Overlay
+            if (C('Plugins.CrafatarPlugin.UseOverlay', 1) == 1) {
+                $useOverlay = true
             }
-            
+
             // Build the query
             $crafatarQuery = array(
-                'helm' = $useHelm,
-                'default' = C('Plugins.CrafatarPlugin.FallbackUrl', 'steve'); 
+                'overlay' = $useOverlay,
+                'default' = C('Plugins.CrafatarPlugin.FallbackUrl', 'steve');
             );
-            
+
             $crafatarQuery = http_build_query($crafatarQuery);
-            
+
             $url = 'https://crafatar.com/avatars/' . $username . $crafatarQuery;
 
         return $url;
